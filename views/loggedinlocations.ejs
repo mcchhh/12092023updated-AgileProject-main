@@ -257,7 +257,7 @@
             </td>
           
             <!-- <td><%= carpark.carparkNumber %></td> -->
-            <% const matchingCarparkInfo = carparkInfoData.find(info => info.car_park_no === carpark.carparkNumber); %>
+            <!-- <% const matchingCarparkInfo = carparkInfoData.find(info => info.car_park_no === carpark.carparkNumber); %> -->
             <!-- <% const matchingCarparkNewInfo = newcarparkinfoData.find(info => info.location === carparkinfo.address); %> -->
             <!--<% console.log('Matching carparkInfo for', carpark.carparkNumber, ':', matchingCarparkInfo); %>-->
             <td><a href="#map"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
