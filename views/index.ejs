@@ -366,22 +366,9 @@
         </div>
 
 
-        <!-- Remember Me pop up functionality -->
-        <!-- <div class="option_field">
-          <span class="checkbox">
-            <input type="checkbox" id="rememberMe">
-            <label for="rememberMe">Remember me</label>
-          </span>
-          <a href="#" class="forgot_pw">Forgot password?</a>
-        </div> -->
-
-
-        <!-- Add this div to display the error message -->
-        <!-- <div id="passwordMismatchError" style="color: red; display: none;">Passwords do not match</div> -->
-
         <!-- Sign Up -->
         <div class="form signup_form show">
-          <form action="#">
+          <form action="/signup" method="POST">
             <h2>Signup</h2>
 
             <div class="input_box">
@@ -739,7 +726,31 @@
         signupForm.style.display = 'none';
           loginForm.style.display = "block";
       });
-       
+
+
+      document.querySelector('form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const name = document.getElementById('signupName').value;
+        const email = document.getElementById('signupEmail').value;
+        const password = document.getElementById('signupPassword').value;
+        
+        const response = await fetch('/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, email, password }),
+        });
+        if (response.ok) {
+        // Account created successfully
+        // You can show a success message or redirect the user
+        // For example, display the success modal:
+        document.getElementById('signupSuccessModal').style.display = 'block';
+      } else {
+        // Handle errors, such as displaying an error message on the page
+        console.error('Error creating an account');
+      }
+    });
     
   
     </script>

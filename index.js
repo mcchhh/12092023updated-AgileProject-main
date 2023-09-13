@@ -270,6 +270,28 @@ app.use((err, req, res, next) => {
   res.status(500).send('Something went wrong!');
 });
 
+
+// Handle POST request for signup form
+router.post('/signup', (req, res) => {
+  const { name, email, password } = req.body;
+
+  // Validate and sanitize user input here if needed
+
+  // Insert user data into the 'userCredentials' table
+  const query = 'INSERT INTO userCredentials (name, email, password) VALUES (?, ?, ?)';
+  db.run(query, [name, email, password], (err) => {
+    if (err) {
+      console.error(err);
+      // Handle the error, such as displaying an error message on the page
+      res.render('signup', { error: 'Error creating an account.' });
+    } else {
+      // User account created successfully
+      // Redirect to a success page or show a success message
+      res.render('signup-success');
+    }
+  });
+});
+
 //app.use('/.netlify/home', router);
 //module.exports.handler = serverless(app);
 

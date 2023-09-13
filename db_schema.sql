@@ -34,9 +34,9 @@ CREATE TABLE IF NOT EXISTS carparkinfo(
 
 CREATE TABLE IF NOT EXISTS userCredentials(
     id  INTEGER PRIMARY KEY AUTOINCREMENT, 
-    loginName TEXT,
-    loginEmail TEXT, 
-    loginPassword INTEGER
+    name TEXT,
+    email TEXT, 
+    password INTEGER
 );
 
 CREATE TABLE IF NOT EXISTS newcarparkinfo (
