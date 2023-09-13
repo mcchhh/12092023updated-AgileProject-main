@@ -552,20 +552,11 @@
       // New login-related JavaScript code
       const loginEmailInput = document.querySelector('.email input[type="email"]');
       const loginPasswordInput = document.querySelector('.password input[type="password"]');
-      // const modalContent = document.querySelector(".modal-content");
-      // const modal = document.getElementById("signupSuccessModal");
-      // const closeModalBtn = document.getElementById("closeModal");
-      // const loginButton = document.querySelector(".login_form button");
+   
       // Find the login button element by its ID
       const loginButton = document.getElementById('login-button');
       // below for the remembr me function 
       const rememberMeCheckbox = document.getElementById('rememberMe');
-
-      // Store the input data in local storage
-      // ****Below nothing is stored as of now 
-      // localStorage.setItem('signupEmail', signupEmailInput.value);
-      // localStorage.setItem('signupPassword', signupPasswordInput.value);
-      // localStorage.setItem('confirmPassword', confirmPasswordInput.value);
 
       // Check if there is stored data in local storage
       const storedSignupEmail = localStorage.getItem('signupEmail');
@@ -600,11 +591,6 @@
             localStorage.removeItem('loginPassword');
             localStorage.setItem('rememberMe', 'false');
           }
-          // }else{
-          //   localStorage.removeItem('loginEmail');
-          //   localStorage.removeItem('loginPassword');
-          //   localStorage.setItem('rememberMe', 'false');
-          // }
         }
 
       }

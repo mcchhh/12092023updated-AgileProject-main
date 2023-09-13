@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS newcarparkinfo (
 
 -- Insert default data (if necessary here)
 -- Table for the signup_form 
-INSERT OR IGNORE INTO userCredentials ("loginName", "loginEmail", "loginPassword") 
+INSERT INTO userCredentials ("name", "email", "password") 
 VALUES ('William', 'williamlow@gmail.com', 'will08');
 
 COMMIT;
