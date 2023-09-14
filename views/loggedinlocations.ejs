@@ -237,7 +237,6 @@
           <!-- <th>Carpark Number</th> -->
           <th>Save to Favourites</th>
           <th>Address</th>
-          <th>Area</th>
           <th>Total Lots</th>
           <th>Lots Available</th>
           <th>Free Parking</th>
@@ -262,7 +261,7 @@
             <!--<% console.log('Matching carparkInfo for', carpark.carparkNumber, ':', matchingCarparkInfo); %>-->
             <td><a href="#map"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
             <!-- <td><%= newcarparkinfoData.length > 0 ? newcarparkinfoData.Area : 'N/A' %></td> -->
-            <td><%= matchingCarparkInfo ? matchingCarparkInfo.Area : 'N/A' %></td>
+            <!-- <td><%= matchingCarparkInfo ? matchingCarparkInfo.Area : 'N/A' %></td> -->
 
             <td><%= carpark.totalLots %></td>
             <td><%= carpark.lotsAvailable %></td>
