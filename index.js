@@ -287,7 +287,7 @@ router.post('/signup', (req, res) => {
     } else {
       // User account created successfully
       // Redirect to a success page or show a success message
-      res.render('signup-success');
+      res.render('/signup-success');  // You need to define this route and corresponding success page 
     }
   });
 });
