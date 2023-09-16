@@ -276,6 +276,10 @@ router.post('/signup', (req, res) => {
   const { name, email, password } = req.body;
 
   // Validate and sanitize user input here if needed
+  if (password !== confirmPassword){
+    // Passwords do not match, handle this case
+    return res.render('signup', {error: 'Passwords do not match'});
+  }
 
   // Insert user data into the 'userCredentials' table
   const query = 'INSERT INTO userCredentials (name, email, password) VALUES (?, ?, ?)';
@@ -287,7 +291,7 @@ router.post('/signup', (req, res) => {
     } else {
       // User account created successfully
       // Redirect to a success page or show a success message
-      res.render('/signup-success');  // You need to define this route and corresponding success page 
+      return res.render('/signup');  // You need to define this route and corresponding success page 
     }
   });
 });
