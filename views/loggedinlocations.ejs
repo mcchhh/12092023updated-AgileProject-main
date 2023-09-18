@@ -276,14 +276,10 @@
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td>
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.free_parking : 'N/A' %></td>
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
-            <!-- <td><%= matchingCarparkInfo ? matchingCarparkInfo.short_term_parking : 'N/A' %></td> -->
-            <!-- <td><%= matchingCarparkInfo ? matchingCarparkInfo.type_of_parking_system: 'N/A' %></td>
-          </tr> -->
+          </tr> 
           
         <% } %>
-        <tr>
-          <!-- <td colspan="4">Data count: <%= carparksData.length %></td> -->
-        </tr>
+     
       </tbody>
       
     </table>
@@ -309,7 +305,7 @@
 
   
    <!-- Map -->
-   <div id="map" style="width: 100%; height: 500px;"></div>
+   <div id="map" style="width: 100%; height: 800px;"></div>
    <script>
 
 const map = L.map('map').setView([1.3521, 103.8198], 12);
