@@ -321,7 +321,14 @@
   background-color: #007bff; /* Primary button background color */
   border-color: #007bff;
   color:white;
-  border-radius: 10px;
+  border-radius: 6px;
+  /* Add more styles as needed */
+}
+.custom-button-new {
+  background-color: green; /* Primary button background color */
+  border-color: green;
+  color:white;
+  border-radius: 6px;
   /* Add more styles as needed */
 }
 
@@ -472,6 +479,7 @@
           <th>Free Parking</th>
           <th>Night Parking</th>
           <th>Share to Telegram</th>
+          <th>Share to Whatsapp</th>
           <!-- <th>Short Term Parking</th>
           <th>Car Park Type</th>
           <th>Parking System</th> -->
@@ -494,6 +502,9 @@
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
             <td>
               <button type="button" id="save-to-telegram" class="custom-button" onclick="openTelegram()">Share Now</button>
+            </td>
+            <td>
+              <button type="button" id="save-to-whatsapp" class="custom-button-new" onclick="openWhatsapp()">Share Now</button>
             </td>
             
           </tr>
@@ -522,6 +533,12 @@
     function openTelegram() {
       // Replace 'https://web.telegram.org/' with the Telegram web URL you want to link to
       window.open('https://web.telegram.org/', '_blank');
+    }
+
+    // function to open telegram when the share now button is clicked 
+    function openWhatsapp() {
+      // Replace 'https://web.telegram.org/' with the Telegram web URL you want to link to
+      window.open('https://web.whatsapp.com/', '_blank');
     }
   </script>
 
