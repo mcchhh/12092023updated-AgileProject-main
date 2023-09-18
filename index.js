@@ -37,8 +37,9 @@ app.use(express.static(__dirname + '/public'));
     fs.createReadStream('./data/HDBCarparkInformation.csv')
     .pipe(csvParser())
     .on('data', async (row)=>{
-      const {car_park_no, address, x_coord, y_coord, car_park_type, type_of_parking_system, short_term_parking, free_parking, night_parking, car_park_decks, gantry_height, car_park_basement } = row;
-      await db.run('INSERT INTO carparkinfo (car_park_no, address, x_coord, y_coord, car_park_type, type_of_parking_system, short_term_parking, free_parking, night_parking, car_park_decks, gantry_height, car_park_basement) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
+      const {car_park_no, address, x_coord, y_coord, car_park_type, type_of_parking_system, short_term_parking, free_parking, night_parking, 
+        car_park_decks, gantry_height, car_park_basement } = row;
+      await db.run('INSERT INTO carparkinfo (car_park_no, address, x_coord, y_coord, car_park_type, type_of_parking_system, short_term_parking,free_parking, night_parking, car_park_decks, gantry_height, car_park_basement) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)',
       [car_park_no, address, x_coord, y_coord, car_park_type, type_of_parking_system, short_term_parking, free_parking, night_parking, car_park_decks, gantry_height, car_park_basement]);
     })
     .on('end', ()=>{
