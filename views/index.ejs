@@ -305,16 +305,19 @@
 }
 
 /* Style for the "How to use CarParko?" section */
+/* Add this CSS to style the "How to use CarParko?" section */
 .how-to-use-section {
-  background-color: rgba(248, 249, 250, 0.7); /* Background color with transparency */
+  background-color: white; /* Set the background color to white */
   padding: 40px 0; /* Adjust the padding as needed */
-  height: 400px; /* Set the desired height */
+  position: relative; /* Add this to create a stacking context */
+  z-index: 2; /* Set a higher z-index to make it appear above the background image */
 }
 
 .how-to-use-section h2 {
   font-size: 40px; /* Adjust the font size as needed */
   margin-bottom: 20px; /* Add spacing below the title */
 }
+
 
 
         
@@ -436,7 +439,7 @@
     </div>
 
 <!-- how to use section -->
-    <section class="howt-to-use-section">
+    <section class="how-to-use-section">
       <div class="container test-center">
         <h2>How to use CarParko?</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur est ea 
