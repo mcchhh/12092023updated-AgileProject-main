@@ -239,6 +239,7 @@
           <th>Address</th>
           <th>Total Lots</th>
           <th>Lots Available</th>
+          <th>Car park type</th>
           <th>Free Parking</th>
           <th>Night Parking</th>
           <!-- <th>Short Term Parking</th>
@@ -265,7 +266,7 @@
 
             <td><%= carpark.totalLots %></td>
             <td><%= carpark.lotsAvailable %></td>
-            <!-- <td><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td> -->
+            <td><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td>
             <td><%= matchingCarparkInfo ? matchingCarparkInfo.free_parking : 'N/A' %></td>
             <td><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
             <!-- <td><%= matchingCarparkInfo ? matchingCarparkInfo.short_term_parking : 'N/A' %></td> -->
