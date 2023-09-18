@@ -474,7 +474,7 @@
             <!-- <td><%= carpark.carparkNumber %></td> -->
             <!-- <% const matchingCarparkInfo = carparkInfoData.find(info => info.car_park_no === carpark.carparkNumber); %> -->
             <!--<% console.log('Matching carparkInfo for', carpark.carparkNumber, ':', matchingCarparkInfo); %>-->
-            <td><a href="#map"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
+            <td><a href="#map" class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
             <td><%= carpark.totalLots %></td>
             <td><%= carpark.lotsAvailable %></td>
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td>
