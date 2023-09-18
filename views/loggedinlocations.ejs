@@ -15,12 +15,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
 
-
-
-
-  <!-- Include your custom JavaScript file for map initialization -->
-  <script src="map.js"></script>
-
     <style>
 
       /* Add this CSS to your existing <style> section */
@@ -278,7 +272,7 @@
             </td>
           
             <!-- <td><%= carpark.carparkNumber %></td> -->
-            <!-- <% const matchingCarparkInfo = carparkInfoData.find(info => info.car_park_no === carpark.carparkNumber); %> -->
+            <% const matchingCarparkInfo = carparkInfoData.find(info => info.car_park_no === carpark.carparkNumber); %>
             <!-- <% const matchingCarparkNewInfo = newcarparkinfoData.find(info => info.location === carparkinfo.address); %> -->
             <!--<% console.log('Matching carparkInfo for', carpark.carparkNumber, ':', matchingCarparkInfo); %>-->
             <td><a href="#map" class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
