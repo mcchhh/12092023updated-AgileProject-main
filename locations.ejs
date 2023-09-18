@@ -286,41 +286,37 @@
   color: #000;
 }
 
-
-/* Share to telegram button */
-/* Define a CSS class for the button */
-.custom-button {
-  background-color: #007bff; /* Primary button background color */
-  border-color: #007bff;
-  color:white;
-  border-radius: 6px;
-  /* Add more styles as needed */
-}
-.custom-button-new {
-  background-color: green; /* Primary button background color */
-  border-color: green;
-  color:white;
-  border-radius: 6px;
-  /* Add more styles as needed */
-}
-
     </style>
 </head>
 <body>
 
+  <!-- Header -->
+  <header class="container-fluid bg-dark text-center py-3" >
+    <h1 class="text-white">CarParko</h1>
+  </header>
+
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <div class="container d-flex justify-content-between align-items-center">
+    <div class="container">
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item" style="margin-left:95px">
+        <li class="nav-item">
           <a class="nav-link" href="home">Home</a>
         </li>
-        <li class="nav-item" style="margin-left:20px">
+        <li class="nav-item">
           <a class="nav-link" href="locations">Locations</a>
         </li>
-        <li class="nav-item" style="margin-left:20px" m>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="reservations">Reservations</a>s
+        </li> -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="favourites">Favourites</a>
+        </li> -->
+        <li class="nav-item">
           <a class="nav-link" href="about">About</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="signup">Log In</a> <!-- Updated link for the Sign Up page -->
+        
       </ul>
       <button class="button" id="form-open">Login</button>
     </div>
@@ -441,14 +437,11 @@
           <th>Address</th>
           <th>Total Lots</th>
           <th>Lots Available</th>
-          <th>Car park type</th>
           <th>Free Parking</th>
           <th>Night Parking</th>
-          <th>Share to Telegram</th>
-          <th>Share to Whatsapp</th>
-          <!-- <th>Short Term Parking</th>
+          <th>Short Term Parking</th>
           <th>Car Park Type</th>
-          <th>Parking System</th> -->
+          <th>Parking System</th>
         </tr>
       </thead>
 
@@ -460,60 +453,28 @@
             <!-- <td><%= carpark.carparkNumber %></td> -->
             <!-- <% const matchingCarparkInfo = carparkInfoData.find(info => info.car_park_no === carpark.carparkNumber); %> -->
             <!--<% console.log('Matching carparkInfo for', carpark.carparkNumber, ':', matchingCarparkInfo); %>-->
-            <td><a href="#map" class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
+            <td><a href="#map"><%= matchingCarparkInfo ? matchingCarparkInfo.address : 'N/A' %></a></td>
             <td><%= carpark.totalLots %></td>
             <td><%= carpark.lotsAvailable %></td>
-            <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td>
-            <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.free_parking : 'N/A' %></td>
-            <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
-            <td>
-              <button type="button" id="save-to-telegram" class="custom-button" onclick="openTelegram()">Share Now</button>
-            </td>
-            <td>
-              <button type="button" id="save-to-whatsapp" class="custom-button-new" onclick="openWhatsapp()">Share Now</button>
-            </td>
-            
+            <td><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td>
+            <td><%= matchingCarparkInfo ? matchingCarparkInfo.free_parking : 'N/A' %></td>
+            <td><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
+            <td><%= matchingCarparkInfo ? matchingCarparkInfo.short_term_parking : 'N/A' %></td>
+            <td><%= matchingCarparkInfo ? matchingCarparkInfo.type_of_parking_system: 'N/A' %></td>
           </tr>
           
         <% } %>
+        <tr>
+          <!-- <td colspan="4">Data count: <%= carparksData.length %></td> -->
+        </tr>
       </tbody>
       
     </table>
   </div>
 
 
-  <!-- Add this JavaScript code after including your table -->
-  <!-- Javascript code for the table above -->
-  <script>
-    // Function to convert text to title case
-    function toTitleCase(text) {
-      return text.replace(/\w\S*/g, function (word) {
-        return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
-      });
-    }
-
-    // Select all relevant table cells and apply title case
-    document.querySelectorAll('.title-case').forEach(function (element) {
-      element.textContent = toTitleCase(element.textContent);
-    });
-
-    // function to open telegram when the share now button is clicked 
-    function openTelegram() {
-      // Replace 'https://web.telegram.org/' with the Telegram web URL you want to link to
-      window.open('https://web.telegram.org/', '_blank');
-    }
-
-    // function to open telegram when the share now button is clicked 
-    function openWhatsapp() {
-      // Replace 'https://web.telegram.org/' with the Telegram web URL you want to link to
-      window.open('https://web.whatsapp.com/', '_blank');
-    }
-  </script>
-
-
-
    <!-- Map -->
-<div id="map" style="width: 100%; height: 800px;"></div>
+<div id="map" style="width: 100%; height: 500px;"></div>
 <script>
   const map = L.map('map').setView([1.3521, 103.8198], 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
@@ -632,7 +593,14 @@
     });
   </script>
 
+
+
   
+
+
+  
+  
+
   <!-- Footer -->
   <footer class="bg-dark text-light pt-3 pb-2">
     <div class="container text-left text-md-left">
@@ -917,3 +885,5 @@
 
 </body>
 </html>
+
+
