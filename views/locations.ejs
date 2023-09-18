@@ -11,8 +11,6 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" >
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
 
 
@@ -49,33 +47,6 @@
       .table {
         width: 100%;
       }
-
-
-      /* Add this CSS to your existing <style> section */
-        header h1 {
-            font-family: 'Montserrat', sans-serif; /* Use the custom font you included */
-            /* You can also specify fallback fonts in case the custom font doesn't load */
-            /* font-family: 'Roboto', Arial, sans-serif; */
-            font-size: 70px; /* Change the font size to your desired value */
-        }
-
-
-      /* Select the .nav-link class and apply the styles */
-      .nav-link {
-          color: white; /* Set the text color to white */
-          font-size: 18px; /* Increase the font size to your desired value */
-          /* You can also add other styles like text-decoration, if needed */
-        }
-
-        /* Optionally, you can style the links on hover and when they are active */
-        .nav-link:hover {
-          text-decoration: underline; /* Add underline on hover */
-        }
-
-        .nav-link.active {
-          /* Add styles for the active link (e.g., when on the current page) */
-          font-weight: bold; /* Make it bold, for example */
-        }
   
   
       #filter-input {
@@ -124,44 +95,44 @@
         }
 
         .home::before{
-          content:'';
-          position: absolute;
-          height:100%;
-          width: 100%;
-          background-color: rgba(0,0,0,0.6);
-          z-index: 100;
-          opacity: 0; 
-          pointer-events: none;
-          transition: all 0.5s ease-out;
-        } 
+  content:'';
+  position: absolute;
+  height:100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.6);
+  z-index: 100;
+  opacity: 0; 
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+} 
 
-        .home.show::before{
-          opacity: 1;
-          pointer-events: auto;
-        } 
-        /* Form */ 
-        .form_container {
-            position: absolute; 
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(1.2);
-            max-width:320px;
-            width:100%;
-            z-index: 101;
-            background:#fff;
-            padding:25px; 
-            border-radius: 12px; 
-            box-shadow: rgba(0,0,0,0.1);
-            opacity:0;
-            pointer-events: none;
-            transition: all 0.4s ease-out;
-        }
+.home.show::before{
+  opacity: 1;
+  pointer-events: auto;
+} 
+/* Form */ 
+.form_container {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    max-width:320px;
+    width:100%;
+    z-index: 101;
+    background:#fff;
+    padding:25px; 
+    border-radius: 12px; 
+    box-shadow: rgba(0,0,0,0.1);
+    opacity:0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
 
-        .home.show .form_container {
-          opacity: 1; 
-          pointer-events: auto;
-          transform: translate(-50%, -50%) scale(1);
-        }
+.home.show .form_container {
+  opacity: 1; 
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
 
 /* .login_form.show,
 .signup_form.show {
@@ -212,7 +183,7 @@
     border-bottom: 1.5px solid #aaaaaa;
 }
 .input_box input:focus {
-    border-color: #007bff;
+    border-color: #7d2ae8;
 }
 
 .input_box i{
@@ -231,7 +202,7 @@
 
 .input_box input:focus ~ i.email,
 .input_box input:focus ~ i.password{
-   color: #007bff;
+   color: #7d2ae8;
 }
 
 .input_box i.pw_hide {
@@ -246,7 +217,7 @@
     justify-content: space-between; 
 }
 .form_container a{
-    color: #007bff;
+    color: #7d2ae8;
     font-size: 12px;
 }
 .form_container a:hover {
@@ -258,7 +229,7 @@
     white-space: nowrap; 
 }
 .checkbox input {
-    accent-color: #007bff;
+    accent-color: #7d2ae8;
 }
 .checkbox label {
     font-size: 12px; 
@@ -267,7 +238,7 @@
     color: #0b0217;
 }
 .form_container .button{
-    background: #007bff; 
+    background: #7d2ae8; 
     margin-top: 30px; 
     width: 100%; 
     padding: 10px 0; 
@@ -315,6 +286,7 @@
   color: #000;
 }
 
+
 /* Share to telegram button */
 /* Define a CSS class for the button */
 .custom-button {
@@ -332,15 +304,9 @@
   /* Add more styles as needed */
 }
 
-
     </style>
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="container-fluid bg-dark text-center py-3" >
-    <h1 class="text-white">CarParko</h1>
-  </header>
 
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand navbar-dark bg-dark">
@@ -515,6 +481,7 @@
     </table>
   </div>
 
+
   <!-- Add this JavaScript code after including your table -->
   <!-- Javascript code for the table above -->
   <script>
@@ -544,61 +511,17 @@
   </script>
 
 
-   Map
-   <div id="map" style="width: 100%; height: 800px;"></div>
-   <!-- <script>
 
-const map = L.map('map').setView([1.3521, 103.8198], 12);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+   <!-- Map -->
+<div id="map" style="width: 100%; height: 800px;"></div>
+<script>
+  const map = L.map('map').setView([1.3521, 103.8198], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
 
-// Fetch data from the server and add markers to the map
-fetch('/fetch-data')
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data); // Log the response data to the console
-    data.forEach((parking) => {
-      const { Location, Development, AvailableLots } = parking;
-      const [latitude, longitude] = Location.split(' ').map(parseFloat);
+  // Create an object to store marker information
+  const markers = {};
 
-      const popupContent = `
-        <strong>${Development}</strong><br>
-        Available Lots: ${AvailableLots}
-      `;
-
-      const marker = L.marker([latitude, longitude])
-        .addTo(map)
-        .bindPopup(`${Development}: Available Lots - ${AvailableLots}`)
-        .openPopup();
-
-      marker.on('click', () => {
-        const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
-        window.location.href = googleMapsUrl;
-      });
-
-      marker.on('mouseover', () => {
-        marker.bindTooltip(popupContent).openTooltip();
-      });
-
-      marker.on('mouseout', () => {
-        marker.closeTooltip();
-      });
-    });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-
-
-  </script> -->
-
-  <script>
-    const map = L.map('map').setView([1.3521, 103.8198], 12);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
-  
-    // Create an object to store marker information
-    const markers = {};
-
-      // Function to create a marker and bind a popup
+  // Function to create a marker and bind a popup
   function createMarker(parking) {
     const { Location, Development, AvailableLots } = parking;
     const [latitude, longitude] = Location.split(' ').map(parseFloat);
@@ -629,7 +552,6 @@ fetch('/fetch-data')
     });
   }
 
-
   // Fetch data from the server and add markers to the map
   fetch('/fetch-data')
     .then((response) => response.json())
@@ -652,7 +574,6 @@ fetch('/fetch-data')
     }
   }
 
-
   // Add event listeners to table rows to zoom to corresponding markers and display popups
   const tableRows = document.querySelectorAll('#tableBody tr');
   tableRows.forEach((row) => {
@@ -663,9 +584,8 @@ fetch('/fetch-data')
       zoomToMarker(developmentName);
     });
   });
-  
-    
-  </script>
+</script>
+
 
   
 
@@ -699,7 +619,7 @@ fetch('/fetch-data')
             console.log(searchTerm); // Add this line to log the search term
 
             tableRows.forEach((row) => {
-                const addressCell = row.querySelector('td:nth-child(1)'); // Select the first cell (address)
+                const addressCell = row.querySelector('td:nth-child(1)'); // Select the second cell (address)
                 const addressText = addressCell.textContent.toLowerCase();
 
                 if (addressText.includes(searchTerm)) {
@@ -712,10 +632,7 @@ fetch('/fetch-data')
     });
   </script>
 
-
   
-  
-
   <!-- Footer -->
   <footer class="bg-dark text-light pt-3 pb-2">
     <div class="container text-left text-md-left">
@@ -1000,5 +917,3 @@ fetch('/fetch-data')
 
 </body>
 </html>
-
-
