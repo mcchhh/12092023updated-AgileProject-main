@@ -619,8 +619,13 @@ fetch('/fetch-data')
           // Store the marker with the Development name as the key
           markers[Development] = marker;
   
+          // marker.on('click', () => {
+          //   const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+          //   window.location.href = googleMapsUrl;
+          // });
+
           marker.on('click', () => {
-            const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+            const googleMapsUrl = 'https://www.google.com/maps?q=${latitude},${longitude}';
             window.location.href = googleMapsUrl;
           });
   
