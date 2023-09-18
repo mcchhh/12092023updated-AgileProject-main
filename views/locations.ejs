@@ -124,44 +124,44 @@
         }
 
         .home::before{
-  content:'';
-  position: absolute;
-  height:100%;
-  width: 100%;
-  background-color: rgba(0,0,0,0.6);
-  z-index: 100;
-  opacity: 0; 
-  pointer-events: none;
-  transition: all 0.5s ease-out;
-} 
+          content:'';
+          position: absolute;
+          height:100%;
+          width: 100%;
+          background-color: rgba(0,0,0,0.6);
+          z-index: 100;
+          opacity: 0; 
+          pointer-events: none;
+          transition: all 0.5s ease-out;
+        } 
 
-.home.show::before{
-  opacity: 1;
-  pointer-events: auto;
-} 
-/* Form */ 
-.form_container {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    max-width:320px;
-    width:100%;
-    z-index: 101;
-    background:#fff;
-    padding:25px; 
-    border-radius: 12px; 
-    box-shadow: rgba(0,0,0,0.1);
-    opacity:0;
-    pointer-events: none;
-    transition: all 0.4s ease-out;
-}
+        .home.show::before{
+          opacity: 1;
+          pointer-events: auto;
+        } 
+        /* Form */ 
+        .form_container {
+            position: absolute; 
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.2);
+            max-width:320px;
+            width:100%;
+            z-index: 101;
+            background:#fff;
+            padding:25px; 
+            border-radius: 12px; 
+            box-shadow: rgba(0,0,0,0.1);
+            opacity:0;
+            pointer-events: none;
+            transition: all 0.4s ease-out;
+        }
 
-.home.show .form_container {
-  opacity: 1; 
-  pointer-events: auto;
-  transform: translate(-50%, -50%) scale(1);
-}
+        .home.show .form_container {
+          opacity: 1; 
+          pointer-events: auto;
+          transform: translate(-50%, -50%) scale(1);
+        }
 
 /* .login_form.show,
 .signup_form.show {
@@ -314,6 +314,16 @@
 .close:hover {
   color: #000;
 }
+
+/* Share to telegram button */
+/* Define a CSS class for the button */
+.custom-button {
+  background-color: #007bff; /* Primary button background color */
+  border-color: #007bff;
+  color:white;
+  /* Add more styles as needed */
+}
+
 
     </style>
 </head>
@@ -482,14 +492,11 @@
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.free_parking : 'N/A' %></td>
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
             <td>
-              <button type="button" id="save-favourites">Share Now</button>
+              <button type="button" id="save-to-telegram" class="custom button">Share Now</button>
             </td>
           </tr>
           
         <% } %>
-        <tr>
-          <!-- <td colspan="4">Data count: <%= carparksData.length %></td> -->
-        </tr>
       </tbody>
       
     </table>
