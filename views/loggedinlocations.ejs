@@ -169,10 +169,22 @@
     cursor: pointer;
   }
 
-  /* style for the words in the table */
-  /* .title-case-text {
-    text-transform: capitalize;
-  } */
+    /* Share to telegram button */
+  /* Define a CSS class for the button */
+  .custom-button {
+    background-color: #007bff; /* Primary button background color */
+    border-color: #007bff;
+    color:white;
+    border-radius: 6px;
+    /* Add more styles as needed */
+  }
+  .custom-button-new {
+    background-color: green; /* Primary button background color */
+    border-color: green;
+    color:white;
+    border-radius: 6px;
+    /* Add more styles as needed */
+  }
 
 
     </style>
@@ -276,6 +288,12 @@
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.car_park_type : 'N/A' %></td>
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.free_parking : 'N/A' %></td>
             <td class="title-case"><%= matchingCarparkInfo ? matchingCarparkInfo.night_parking : 'N/A' %></td>
+            <td>
+              <button type="button" id="save-to-telegram" class="custom-button" onclick="openTelegram()">Share Now</button>
+            </td>
+            <td>
+              <button type="button" id="save-to-whatsapp" class="custom-button-new" onclick="openWhatsapp()">Share Now</button>
+            </td>
           </tr> 
           
         <% } %>
@@ -298,6 +316,18 @@
     document.querySelectorAll('.title-case').forEach(function (element) {
       element.textContent = toTitleCase(element.textContent);
     });
+
+    // function to open telegram when the share now button is clicked 
+    function openTelegram() {
+      // Replace 'https://web.telegram.org/' with the Telegram web URL you want to link to
+      window.open('https://web.telegram.org/', '_blank');
+    }
+
+    // function to open telegram when the share now button is clicked 
+    function openWhatsapp() {
+      // Replace 'https://web.telegram.org/' with the Telegram web URL you want to link to
+      window.open('https://web.whatsapp.com/', '_blank');
+    }
   </script>
 
 
